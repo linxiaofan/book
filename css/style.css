@@ -1,0 +1,478 @@
+/* ============================================================
+   XX 图书馆 · 共享样式表 style.css
+   ------------------------------------------------------------
+   ⚠️ 这是【全员共享】文件，练习时多人编辑这里会产生合并冲突。
+   请尽量只在自己模块的区块内追加样式，避免改动共享区块。
+   ============================================================ */
+
+
+/* ===== 基础重置 / CSS 变量（共享，勿乱改）===== */
+:root {
+  --primary: #2c5282;          /* 主色：深蓝 */
+  --primary-light: #3a6ea5;
+  --secondary: #c05621;        /* 次色：橙 */
+  --bg: #f7fafc;               /* 页面背景 */
+  --surface: #ffffff;          /* 卡片背景 */
+  --text: #1a202c;             /* 主文字 */
+  --text-light: #4a5568;       /* 次文字 */
+  --border: #e2e8f0;           /* 边框 */
+  --radius: 10px;              /* 圆角 */
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --status-available: #2f855a; /* 可借：绿 */
+  --status-borrowed: #c53030;  /* 已借：红 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ===== 通用：布局容器 / 标题 ===== */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--secondary);
+  display: inline-block;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  color: var(--text-light);
+  margin-bottom: 32px;
+}
+
+
+/* ===== 通用：导航栏（共享）===== */
+.site-header {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav a {
+  color: #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.98rem;
+  transition: background-color 0.2s;
+}
+
+.nav a:hover {
+  background-color: var(--primary-light);
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav a.active {
+  background-color: var(--secondary);
+  color: #fff;
+  font-weight: 600;
+}
+
+
+/* ===== 通用：页脚（共享）===== */
+.site-footer {
+  background-color: #1a202c;
+  color: #cbd5e0;
+  padding: 30px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.site-footer h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.site-footer a {
+  color: #90cdf4;
+}
+
+.footer-copy {
+  width: 100%;
+  border-top: 1px solid #2d3748;
+  margin-top: 16px;
+  padding-top: 16px;
+  text-align: center;
+  color: #718096;
+}
+
+
+/* ===== 通用：标签 / 徽章 ===== */
+.tag {
+  display: inline-block;
+  background-color: #ebf4ff;
+  color: var(--primary);
+  font-size: 0.78rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-right: 6px;
+}
+
+.status {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 6px;
+}
+
+.status.available {
+  background-color: #c6f6d5;
+  color: var(--status-available);
+}
+
+.status.borrowed {
+  background-color: #fed7d7;
+  color: var(--status-borrowed);
+}
+
+
+/* ============================================================
+   ▼▼▼ 以下为各模块区块，练习时请在对应区块追加样式 ▼▼▼
+   ============================================================ */
+
+
+/* ===== 模块A：书籍卡片（index.html）===== */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.book-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.book-cover {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+}
+
+.book-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.book-title {
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.book-meta {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.book-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  flex: 1;
+}
+
+.book-location {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.book-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+
+/* ===== 模块B：介绍页（about.html）===== */
+.intro-text {
+  font-size: 1.02rem;
+  color: var(--text-light);
+  max-width: 800px;
+}
+
+.intro-text p {
+  margin-bottom: 16px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.info-card h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.info-card p,
+.info-card li {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.floor-list li,
+.rules-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+  color: var(--text-light);
+}
+
+.floor-list li:last-child,
+.rules-list li:last-child {
+  border-bottom: none;
+}
+
+.floor-list li strong,
+.rules-list li strong {
+  color: var(--secondary);
+  margin-right: 8px;
+}
+
+.service-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.service-card .icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: var(--text-light);
+  font-size: 0.92rem;
+}
+
+
+/* ===== 模块C：管理员页（librarian.html）===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.member-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.member-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 16px;
+}
+
+.member-name {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.member-role {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.member-detail {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.member-detail li {
+  padding: 4px 0;
+}
+
+.member-detail li strong {
+  color: var(--primary);
+  margin-right: 6px;
+}
+
+.member-bio {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.88rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .book-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
