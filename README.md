@@ -141,7 +141,7 @@ git merge main
 
 - [ ] 模块 A（书籍页 `index.html`）— `<柏佳沂>`
 - [ ] 模块 B（图书馆介绍 `about.html`）— `<讨厌你>`
-- [ ] 模块 C（管理员介绍 `librarian.html`）— `<你的姓名>`
+- [ ] 模块 C（管理员介绍 `librarian.html`）— `<xiaolin>`
 
 ---
 
