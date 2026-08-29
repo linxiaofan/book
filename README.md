@@ -140,7 +140,7 @@ git merge main
 > 📌 练习用：请每位同学在自己的分支里把自己加到下面这个列表，合并时体验相邻行冲突。
 
 - [ ] 模块 A（书籍页 `index.html`）— `<柏佳沂>`
-- [ ] 模块 B（图书馆介绍 `about.html`）— `<讨厌你>`
+- [ ] 模块 B（图书馆介绍 `about.html`）— `<你的小狗>`
 
 - [ ] 模块 C（管理员介绍 `librarian.html`）— `<xiaolin和xiaobai>`
 
