@@ -88,7 +88,7 @@ git commit -m "feat: 添加共享样式表 style.css（含模块分块）"
 - `<header class="site-header">`：logo（XX图书馆）+ `<nav class="nav">` 三个链接，**首页设为 `class="active"`**（`index.html` / `about.html` / `librarian.html`）。
 - 欢迎横幅 `<section class="hero">`：欢迎语 + 简介。
 - `<section class="section"><h2>馆藏书籍</h2>`：`.book-grid` 包含约 8 张 `.book-card`。每张含：`.book-cover`（占位色块或 emoji）、`.book-title` 书名、`.book-meta`（作者·分类）、简介 `<p>`、馆藏地、`.status.available`/`.status.borrowed`。
-  - 书目：《活着》余华（小说/可借）、《三体》刘慈欣（科幻/已借）、《百年孤独》马尔克斯（小说/可借）、《围城》钱钟书（小说/可借）、《小王子》圣埃克苏佩里（童话/可借）、《人类简史》赫拉利（历史/已借）、《解忧杂货店》东野圭吾（小说/可借）、《红楼梦》曹雪芹（古典/可借）。
+  - 书目：《我还活着》余华（小说/可借）、《三体》刘慈欣（科幻/已借）、《百年孤独》马尔克斯（小说/可借）、《围城》钱钟书（小说/可借）、《小王子》圣埃克苏佩里（童话/可借）、《人类简史》赫拉利（历史/已借）、《解忧杂货店》东野圭吾（小说/可借）、《红楼梦》曹雪芹（古典/可借）。
 - `<footer class="site-footer">`：版权、地址、联系方式。
 
 **Step 2: 验证**
